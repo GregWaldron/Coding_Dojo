@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Survey</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div id="formContainer">
+        <h1>Dojo Survey</h1>
+        <form action="/process" method="post">
+            <label for="name" class="label">Name:</label>
+            <input type="text" name="name" class="input">
+            <label for="dojo" class="label">Dojo Location:</label>
+            <select name="dojo" class="input">
+                <option value="Central City">Central City</option>
+                <option value="Coast City">Coast City</option>
+                <option value="Gotham City">Gotham City</option>
+                <option value="Metropolis">Metropolis</option>
+                <option value="National City">National City</option>
+                <option value="Smallville">Smallville</option>
+                <option value="Star City">Star City</option>
+            </select>
+            <label for="language" class="label">Favorite Language:</label>
+                <input type="radio" name="language" value="C#" id="C#" class="indent"> <label for="C#">C#</label><br>
+                <input type="radio" name="language" value="CSS" id="CSS" class="indent"> <label for="CSS">CSS</label><br>
+                <input type="radio" name="language" value="HTML" id="HTML" class="indent"> <label for="HTML">HTML</label><br>
+                <input type="radio" name="language" value="Javascript" id="Javascript" class="indent"> <label for="Javascript">Javascript</label><br>
+                <input type="radio" name="language" value="Python" id="Python" class="indent" class="input"> <label for="Python">Python</label><br>
+            <h4 class="label">Interests:</h4>
+                <input type="checkbox" id="Crime-Fighting" name="Crime-Fighting" value="Crime-Fighting" class="indent"> <label for="Crime-Fighting">Crime-Fighting</label><br>
+                <input type="checkbox" id="Flying" name="Flying" value="Flying" class="indent"> <label for="Flying">Flying</label><br>
+                <input type="checkbox" id="Gadgets" name="Gadgets" value="Gadgets" class="indent"> <label for="Gadgets">Gadgets</label><br>
+                <input type="checkbox" id="Running" name="Running" value="Running" class="indent"> <label for="Running">Running</label><br>
+            <label for="comments" class="label">Comments:</label>
+            <textarea name="comments" class="input"></textarea>
+            <input type="submit" value="Submit" class="submit">
+        </form>
+    </div>
+</body>
+</html>

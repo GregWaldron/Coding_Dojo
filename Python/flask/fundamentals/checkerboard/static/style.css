@@ -1,0 +1,17 @@
+* {
+    border:0px;
+    margin:0px;
+}
+
+.row {
+    margin:0 auto;
+    display:flex;
+    justify-content:center;
+    flex-flow: row nowrap;
+    height:100px;
+}
+
+.square {
+    width:100px;
+    height:100px;
+}

@@ -1,0 +1,38 @@
+INSERT INTO users (first_name, last_name)
+VALUES ('Frodo', 'Baggins'),
+	('Samwise', 'Gamgee'),
+	('Gandalf', 'The Gray'),
+	('Legolas', 'Greenleaf'),
+	('Gimli', 'Son of Gloin'),
+	('Aragorn', 'Elessar');
+	
+INSERT INTO friendships (user_id, friend_id)
+VALUES (1,2), (1,4), (1,6);
+
+INSERT INTO friendships (user_id, friend_id)
+VALUES (2,1), (2,3), (2,5);
+
+INSERT INTO friendships (user_id, friend_id)
+VALUES (3,2), (3,5);
+
+INSERT INTO friendships (user_id, friend_id)
+VALUES (4,3);
+
+INSERT INTO friendships (user_id, friend_id)
+VALUES (5,1), (5,6);
+
+INSERT INTO friendships (user_id, friend_id)
+VALUES (6,2), (6,3);
+
+SELECT users.first_name, users.last_name, user2.first_name as friend_first_name, user2.last_name as friend_last_name FROM users
+JOIN friendships ON users.id = friendships.user_id
+LEFT JOIN users as user2 ON friendships.friend_id = user2.id;
+
+SELECT first_name, last_name FROM users
+JOIN friendships ON users.id = friendships.user_id
+WHERE friendships.friend_id = 1
+UNION
+SELECT first_name, last_name FROM users
+JOIN friendships ON users.id = friendships.friend_id
+WHERE friendships.user_id = 1;
+

@@ -1,0 +1,38 @@
+class User:
+    def __init__(self, name, email):
+        self.name = name
+        self.email = email
+        self.account_balance = 0
+
+    def make_deposit(self, amount):
+        self.account_balance += amount
+        return self
+
+    def make_withdrawal(self, amount):
+        self.account_balance -= amount
+        return self
+    
+    def display_user_balance(self):
+        print (self.name + ": " + str(self.account_balance))
+
+    def transfer_money(self,other_user,amount):
+        self.account_balance -= amount
+        other_user.account_balance += amount
+
+jessica = User("Jessica Waldron", "jessica@email.com")
+kaitlyn = User("Kaitlyn Waldron", "kaity@email.com")
+daniel = User("Daniel Pickett", "dan@email.com")
+
+jessica.make_deposit(464).make_deposit(222).make_deposit(110).make_withdrawal(23)
+jessica.display_user_balance()
+
+kaitlyn.make_deposit(1012).make_deposit(1999).make_withdrawal(805).make_withdrawal(303)
+kaitlyn.display_user_balance()
+
+daniel.make_deposit(6900).make_withdrawal(330).make_withdrawal(2010).make_withdrawal(11)
+daniel.display_user_balance()
+
+jessica.transfer_money(daniel, 42)
+
+jessica.display_user_balance()
+daniel.display_user_balance()
