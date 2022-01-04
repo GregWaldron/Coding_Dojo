@@ -25,9 +25,8 @@ class Dojo:
 
     @classmethod
     def showNinjas(cls, data):
-        query  = "SELECT * FROM dojos LEFT JOIN ninjas ON dojos.id = ninjas.dojo_id WHERE dojos.id = %(id)s ORDER BY dojo.name;"
+        query  = "SELECT * FROM dojos LEFT JOIN ninjas ON dojos.id = ninjas.dojo_id WHERE dojos.id = %(id)s ORDER BY dojos.name;"
         results = connectToMySQL('dojos_and_ninjas').query_db(query, data)
-        print ("RESULTS[0]",results[0])
         dojo = cls(results[0])
         for row in results:
             n = {
