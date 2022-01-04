@@ -26,7 +26,7 @@ class User:
     @classmethod
     def showOneUser(cls, data):
         query  = "SELECT * FROM users WHERE id = %(id)s;"
-        result = connectToMySQL('users_schema').query_db(query,data)
+        result = connectToMySQL('users').query_db(query,data)
         return cls(result[0])
     
     @classmethod
