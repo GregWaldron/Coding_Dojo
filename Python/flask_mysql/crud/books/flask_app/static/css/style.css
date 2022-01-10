@@ -1,0 +1,36 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    margin:0px;
+    padding:0px;
+}
+
+body {
+    background: rgb(208, 231, 247);
+}
+
+table {
+    border:1px solid black;
+    margin:0 auto;
+}
+
+thead {
+    background-color: lightgray;
+}
+
+th, td {
+    padding:5px 20px 5px 5px;
+    text-align: left;
+}
+
+ul, h1, h3, form {
+    text-align: center;
+    margin:20px;
+}
+
+li {
+    list-style-type: none;
+}
+
+input {
+    margin:10px 0px;
+}

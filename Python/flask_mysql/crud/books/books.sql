@@ -1,0 +1,1 @@
+SELECT * FROM authors LEFT JOIN favorites ON authors.id = author_id LEFT JOIN books ON books.id = favorites.book_id WHERE authors.id = %(id)s ORDER BY authors.name;
